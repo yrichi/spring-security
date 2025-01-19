@@ -1,4 +1,4 @@
-package com.kata.springsecurity.config;
+package com.kata.springsecurity.service;
 
 import com.kata.springsecurity.entity.CustomUser;
 import com.kata.springsecurity.repository.CustomUserRepository;
