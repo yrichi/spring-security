@@ -13,7 +13,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +27,7 @@ import java.util.Map;
 @Slf4j
 public class AuthController {
 
-    private final BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final JWTUtils jwtUtils;
     private final CustomUserRepository userRepository;
     private final AuthenticationManager authenticationManager;
@@ -41,7 +40,7 @@ public class AuthController {
         }
         CustomUser customUser = CustomUser.builder()
                 .username(user.getUsername())
-                .password(passwordEncoder.encode(user.getPassword()))
+                .password(bCryptPasswordEncoder.encode(user.getPassword()))
                 .roles("USER")
                 .build();
         CustomUser customUserSaved = userRepository.save(customUser);
