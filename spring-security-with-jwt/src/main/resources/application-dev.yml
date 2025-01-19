@@ -17,6 +17,3 @@ spring:
 
 
 
-app:
-  secret-key: mySecretKey
-  app.expiration-time: 900000

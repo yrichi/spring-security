@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class MyUserDetailService implements UserDetailsService {
+public class CustomUserDetailService implements UserDetailsService {
 
     private final CustomUserRepository userRepository;
 

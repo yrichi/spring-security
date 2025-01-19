@@ -19,7 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class ProdSecurityConfig {
 
 
-    private final MyUserDetailService customUserDetailService;
+    private final CustomUserDetailService customUserDetailService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
