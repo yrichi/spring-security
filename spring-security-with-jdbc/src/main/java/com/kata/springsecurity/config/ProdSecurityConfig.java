@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@Profile("prod")
 @AllArgsConstructor
 public class ProdSecurityConfig {
 
