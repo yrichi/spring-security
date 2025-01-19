@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4acdd27-1447-4ad0-996e-5de33ff6e73c" name="Changes" comment="avancement todo global">
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jdbc/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jdbc/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/insert-user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/SpringSecurityApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/MyUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/ProdSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/controller/DemoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/entity/CustomUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/repository/CustomUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/java/com/kata/springsecurity/SpringSecurityApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/java/com/kata/springsecurity/config/TestContainersConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/java/com/kata/springsecurity/config/TestDatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/java/com/kata/springsecurity/controller/DemoControllerIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/test/resources/data.sql" afterDir="false" />
+    </list>
+    <list id="3d9b8923-c4ba-4af9-9c55-37726d7f0750" name="ne pas commit" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b706595-bbdd-4ce9-b390-3df9c0b54eb5/storage_v2/_src_/database/spring_security.MqWXDg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/spring-security-with-jdbc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/spring-security-with-jdbc.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="module" />
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/spring-security-sample">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/spring-security-with-jdbc">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/spring-security-with-jwt">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/spring-security-sample">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/spring-security-with-jdbc">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-security-with-jdbc" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-security-with-jdbc" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-security-with-jdbc" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-security-with-jdbc" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-security-with-jdbc" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yrichi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yrichi/spring-security.git&quot;,
+    &quot;accountId&quot;: &quot;38d2739f-abc5-41f6-b5a9-b0d6395fda56&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2rdXV6AfxcjTu7N7RcJbnBVbgoh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.spring-security-with-jdbc: Compose Deployment.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Build spring-security-sample.executor": "Run",
+    "Gradle.Build spring-security-with-jdbc.executor": "Run",
+    "Gradle.Build spring-security.executor": "Run",
+    "Gradle.DemoControllerIT (1).executor": "Run",
+    "Gradle.DemoControllerIT.executor": "Run",
+    "Gradle.DemoControllerIT.publicEndpoint.executor": "Run",
+    "Gradle.DemoControllerIT.testAdminEndpointWithAdmin.executor": "Run",
+    "Gradle.DemoControllerIT.testProtectedEndpoint.executor": "Run",
+    "Gradle.DemoControllerIT.testProtectedEndpointWithUser.executor": "Run",
+    "Gradle.DemoControllerIT.testPublicEndpoint.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Tests in 'com.kata.spring-security'.executor": "Run",
+    "Gradle.spring-security [build].executor": "Run",
+    "Gradle.spring-security-with-jdbc [assemble].executor": "Run",
+    "Gradle.spring-security-with-jdbc [bootBuildImage].executor": "Run",
+    "Gradle.spring-security-with-jdbc [buildDependents].executor": "Run",
+    "Gradle.spring-security-with-jdbc [dependencies].executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SpringSecurityApplication (1).executor": "Run",
+    "Spring Boot.SpringSecurityApplication.executor": "Debug",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/house-pc/IdeaProjects/spring-security/spring-security/spring-security-with-jwt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kata.springsecurity.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\house-pc\IdeaProjects\spring-security\spring-security\spring-security-with-jdbc\src\test\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.kata.springsecurity.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kata.springsecurity.config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build " />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.DemoControllerIT">
+    <configuration name="DemoControllerIT" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-with-jdbc" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kata.springsecurity.controller.DemoControllerIT&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DemoControllerIT.testAdminEndpointWithAdmin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-with-jdbc" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kata.springsecurity.controller.DemoControllerIT.testAdminEndpointWithAdmin&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DemoControllerIT.testProtectedEndpointWithUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-with-jdbc" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kata.springsecurity.controller.DemoControllerIT.testProtectedEndpointWithUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DemoControllerIT.testPublicEndpoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-with-jdbc" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kata.springsecurity.controller.DemoControllerIT.testPublicEndpoint&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="spring-security-with-jdbc [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-with-jdbc" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-security.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-security.main" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringSecurityApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="com.kata.spring-security-with-jdbc.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kata.springsecurity.SpringSecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="spring-security-with-jdbc.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kata.springsecurity.SpringSecurityApplication" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="prod" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="com.kata.spring-security.main~2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kata.springsecurity.SpringSecurityApplication" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DemoControllerIT" />
+        <item itemvalue="Gradle.DemoControllerIT.testAdminEndpointWithAdmin" />
+        <item itemvalue="Gradle.DemoControllerIT.testPublicEndpoint" />
+        <item itemvalue="Gradle.DemoControllerIT.testProtectedEndpointWithUser" />
+        <item itemvalue="Gradle.spring-security-with-jdbc [assemble]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringProfilesService">
+    <option name="activeProfiles">
+      <map>
+        <entry key="com.kata.spring-security.main~1" value="prod" />
+        <entry key="com.kata.spring-security.main~2" value="prod" />
+      </map>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4acdd27-1447-4ad0-996e-5de33ff6e73c" name="Changes" comment="" />
+      <changelist id="3d9b8923-c4ba-4af9-9c55-37726d7f0750" name="ne pas commit" comment="" />
+      <created>1736889947520</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736889947520</updated>
+      <workItem from="1736889948569" duration="3712000" />
+      <workItem from="1737305408637" duration="12310000" />
+    </task>
+    <task id="LOCAL-00001" summary="init project">
+      <option name="closed" value="true" />
+      <created>1736890049069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736890049069</updated>
+    </task>
+    <task id="LOCAL-00002" summary="premier systeme d'authentification basic et in memory">
+      <option name="closed" value="true" />
+      <created>1736893313515</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736893313515</updated>
+    </task>
+    <task id="LOCAL-00003" summary="move files">
+      <option name="closed" value="true" />
+      <created>1737305498448</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737305498448</updated>
+    </task>
+    <task id="LOCAL-00004" summary="deuxieme kata , avec base de donnée">
+      <option name="closed" value="true" />
+      <created>1737310263211</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737310263211</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: ajout d'un profil dev avec une base h2">
+      <option name="closed" value="true" />
+      <created>1737310714252</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737310714252</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ajout d'un test via test container + README.md">
+      <option name="closed" value="true" />
+      <created>1737316427829</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737316427829</updated>
+    </task>
+    <task id="LOCAL-00007" summary="avancement todo global">
+      <option name="closed" value="true" />
+      <created>1737316464536</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737316464536</updated>
+    </task>
+    <task id="LOCAL-00008" summary="avancement todo global">
+      <option name="closed" value="true" />
+      <created>1737316499793</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737316499793</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project" />
+    <MESSAGE value="premier systeme d'authentification basic et in memory" />
+    <MESSAGE value="move files" />
+    <MESSAGE value="deuxieme kata , avec base de donnée" />
+    <MESSAGE value="feat: ajout d'un profil dev avec une base h2" />
+    <MESSAGE value="ajout d'un test via test container + README.md" />
+    <MESSAGE value="avancement todo global" />
+    <option name="LAST_COMMIT_MESSAGE" value="avancement todo global" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-security-with-jdbc/src/test/java/com/kata/springsecurity/controller/DemoControllerIT.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-security-with-jdbc/src/test/java/com/kata/springsecurity/controller/DemoControllerIT.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.4.2/6c20311510a09e594d9b28ac492699a7dffa02fe/spring-security-crypto-6.4.2-sources.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.4.2/6c20311510a09e594d9b28ac492699a7dffa02fe/spring-security-crypto-6.4.2-sources.jar!/org/springframework/security/crypto/bcrypt/BCrypt.java</url>
+          <line>763</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/spring-security-with-jdbc/src/test/java/com/kata/springsecurity/controller/DemoControllerIT.java</url>
+          <line>34</line>
+          <properties class="com.kata.springsecurity.controller.DemoControllerIT" method="testPublicEndpoint">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/spring_security$DemoControllerIT_testPublicEndpoint.ic" NAME="DemoControllerIT.testPublicEndpoint Coverage Results" MODIFIED="1737314669809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>

@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  database:
+    image: postgres:15
+    container_name: spring_security_db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: spring_security
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
