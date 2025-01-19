@@ -162,9 +162,9 @@ Chaque étape doit :
 ---
 
 ### **Phase 2 : Authentification avancée**
-- [ ] Configurer l'authentification JDBC avec une base H2 ou Docker Compose
-- [ ] Activer la configuration uniquement pour le profil prod
-- [ ] Créer une base de données avec les tables `users` et `authorities`
+- [x] Configurer l'authentification JDBC avec une base H2 ou Docker Compose
+- [x] Activer la configuration uniquement pour le profil prod
+- [x] Créer une base de données avec les tables `users` et `authorities`
 - [ ] Configurer une API REST sécurisée avec JWT
 - [ ] Ajouter la révocation des tokens JWT
 
