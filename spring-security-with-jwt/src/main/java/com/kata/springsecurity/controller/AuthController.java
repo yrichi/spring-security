@@ -45,7 +45,7 @@ public class AuthController {
         CustomUser customUser = CustomUser.builder()
                 .username(user.getUsername())
                 .password(bCryptPasswordEncoder.encode(user.getPassword()))
-                .roles("USER")
+                .roles(user.isAdmin() ? "ADMIN" : "USER")
                 .build();
         CustomUser customUserSaved = userRepository.save(customUser);
         return ResponseEntity.ok(customUserSaved);

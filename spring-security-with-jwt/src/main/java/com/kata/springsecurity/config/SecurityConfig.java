@@ -55,7 +55,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/api/auth/*").permitAll()
                         .requestMatchers("/api/public").permitAll()
-                        .requestMatchers("/api/private").hasRole("USER")
+                        .requestMatchers("/api/protected").hasRole("USER")
+                        .requestMatchers("/api/admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(new JWTFilter(jwtUtils, customUserDetailService,tokenBlacklistService), UsernamePasswordAuthenticationFilter.class)

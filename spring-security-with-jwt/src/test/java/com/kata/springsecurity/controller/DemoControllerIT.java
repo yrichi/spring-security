@@ -1,22 +1,25 @@
 package com.kata.springsecurity.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kata.springsecurity.config.TestContainersConfig;
 import com.kata.springsecurity.config.TestDatabaseConfig;
-import com.kata.springsecurity.entity.CustomUser;
+import com.kata.springsecurity.modele.UserPresentation;
 import com.kata.springsecurity.repository.CustomUserRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
+import java.util.Map;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest()
 @AutoConfigureMockMvc
@@ -30,62 +33,56 @@ class DemoControllerIT {
     @Autowired
     CustomUserRepository customUserRepository;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @BeforeEach
+    void setUp() {
+        // Nettoyer la base si nécessaire
+        customUserRepository.deleteAll();
+    }
 
     @Test
-    public void testPublicEndpoint() throws Exception {
-        mockMvc.perform(get("/api/public"))
+    void testRegisterLoginAndAccessProtectedEndpoint() throws Exception {
+
+
+        UserPresentation newUser = new UserPresentation();
+        newUser.setUsername("bob");
+        newUser.setPassword("secret");
+        newUser.setAdmin(false);
+
+        String userJson = objectMapper.writeValueAsString(newUser);
+
+        mockMvc.perform(post("/api/auth/register")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(userJson))
+                .andExpect(status().isOk());
+
+
+        String loginResponse = mockMvc.perform(post("/api/auth/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(userJson))
                 .andExpect(status().isOk())
-                .andExpect(content().string("This is a public endpoint. Anyone can access this."));
-    }
+                .andExpect(jsonPath("$.token").exists())
+                .andExpect(jsonPath("$.username").value("bob"))
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
 
-    @Test
-    public void testProtectedEndpoint() throws Exception {
-        mockMvc.perform(get("/api/protected"))
-                .andExpect(status().isUnauthorized());
-    }
 
-    @Test
-    public void testProtectedEndpointWithUser() throws Exception {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode("password");
-
-        customUserRepository.save(CustomUser.builder()
-                .username("user")
-                .password(encodedPassword)
-                .roles("USER")
-                .build());
+        Map<?, ?> responseMap = objectMapper.readValue(loginResponse, Map.class);
+        String token = (String) responseMap.get("token");
 
 
         mockMvc.perform(get("/api/protected")
-                .with(httpBasic("user", "password")))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(content().string("This is a protected endpoint. You are authenticated!"));
-    }
-
-    @Test
-    public void testAdminEndpoint() throws Exception {
-        mockMvc.perform(get("/api/admin"))
-                .andExpect(status().isUnauthorized());
-    }
-
-
-    @Test
-    public void testAdminEndpointWithAdmin() throws Exception {
-
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode("password");
-
-        customUserRepository.save(CustomUser.builder()
-                .username("admin")
-                .password(encodedPassword)
-                .roles("ADMIN")
-                .build());
 
 
         mockMvc.perform(get("/api/admin")
-                        .with(httpBasic("admin", "password")))
-                .andExpect(status().isOk())
-                .andExpect(content().string("This is an admin-only endpoint. You are an admin!"));
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(status().isForbidden());
     }
 
 
