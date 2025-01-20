@@ -166,7 +166,7 @@ Chaque étape doit :
 - [x] Activer la configuration uniquement pour le profil prod
 - [x] Créer une base de données avec les tables `users` et `authorities`
 - [x] Configurer une API REST sécurisée avec JWT
-- [ ] Ajouter la révocation des tokens JWT
+- [x] Ajouter la révocation des tokens JWT
 
 ---
 
