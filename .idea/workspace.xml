@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acdd27-1447-4ad0-996e-5de33ff6e73c" name="Changes" comment="avancement todo global">
-      <change beforePath="$PROJECT_DIR$/spring-security-with-jwt/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spring-security-with-jwt/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/filter/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/config/filter/JWTFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-security-with-jwt/src/main/java/com/kata/springsecurity/controller/AuthController.java" afterDir="false" />
     </list>
     <list id="3d9b8923-c4ba-4af9-9c55-37726d7f0750" name="ne pas commit" comment="" />
@@ -167,7 +170,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -406,7 +409,8 @@
       <updated>1736889947520</updated>
       <workItem from="1736889948569" duration="3712000" />
       <workItem from="1737305408637" duration="12310000" />
-      <workItem from="1737324739257" duration="1000" />
+      <workItem from="1737324739257" duration="596000" />
+      <workItem from="1737371346008" duration="819000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />

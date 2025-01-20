@@ -28,6 +28,7 @@ public class SecurityConfig {
 
     private final CustomUserDetailService customUserDetailService;
     private final JWTUtils jwtUtils;
+    private final TokenBlacklistService tokenBlacklistService;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -54,10 +55,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/api/auth/*").permitAll()
                         .requestMatchers("/api/public").permitAll()
-                        .requestMatchers("/api/private/*").hasRole("USER")
+                        .requestMatchers("/api/private").hasRole("USER")
                         .anyRequest().authenticated()
                 )
-                .addFilterBefore(new JWTFilter(jwtUtils, customUserDetailService), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JWTFilter(jwtUtils, customUserDetailService,tokenBlacklistService), UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }

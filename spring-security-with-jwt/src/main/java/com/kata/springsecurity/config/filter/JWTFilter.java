@@ -1,5 +1,6 @@
 package com.kata.springsecurity.config.filter;
 
+import com.kata.springsecurity.config.TokenBlacklistService;
 import com.kata.springsecurity.service.CustomUserDetailService;
 import com.kata.springsecurity.config.JWTUtils;
 import jakarta.servlet.FilterChain;
@@ -17,12 +18,14 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 
-@Component
+
 @AllArgsConstructor
 public class JWTFilter extends OncePerRequestFilter {
 
     private final JWTUtils jwtUtils;
-    private CustomUserDetailService userDetailsService;
+    private final CustomUserDetailService userDetailsService;
+    private final TokenBlacklistService tokenBlacklistService;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -33,6 +36,12 @@ public class JWTFilter extends OncePerRequestFilter {
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             jwt = authorizationHeader.substring(7); // Extracting the token from the header
+            // 1) Vérifier la blacklist
+            if (tokenBlacklistService.isTokenBlacklisted(jwt)) {
+                // Token révoqué
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Token has been revoked");
+                return;
+            }
             username = jwtUtils.extractUsernameFromToken(jwt);
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 // je verifie si le token est valide et si il existe pas deja une authentification en cours

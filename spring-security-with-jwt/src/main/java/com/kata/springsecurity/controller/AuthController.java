@@ -2,9 +2,11 @@ package com.kata.springsecurity.controller;
 
 
 import com.kata.springsecurity.config.JWTUtils;
+import com.kata.springsecurity.config.TokenBlacklistService;
 import com.kata.springsecurity.entity.CustomUser;
 import com.kata.springsecurity.modele.UserPresentation;
 import com.kata.springsecurity.repository.CustomUserRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +34,7 @@ public class AuthController {
     private final JWTUtils jwtUtils;
     private final CustomUserRepository userRepository;
     private final AuthenticationManager authenticationManager;
+    private final TokenBlacklistService tokenBlacklistService;
 
 
     @PostMapping("/register")
@@ -65,5 +69,23 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Invalid credentials");
         }
     }
+
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            Date expirationDate = jwtUtils.extractExpiration(token);
+            long expiryTimestamp = expirationDate.getTime();
+
+            // On ajoute le token à la blacklist
+            tokenBlacklistService.blacklistToken(token, expiryTimestamp);
+            return ResponseEntity.ok("Token revoked successfully");
+        } else {
+            return ResponseEntity.badRequest().body("No Bearer token found in request");
+        }
+    }
+
 
 }
