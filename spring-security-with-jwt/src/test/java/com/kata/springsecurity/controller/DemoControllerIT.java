@@ -46,6 +46,7 @@ class DemoControllerIT {
     void testRegisterLoginAndAccessProtectedEndpoint() throws Exception {
 
 
+        // creer un utilisateur et le sauvegarder
         UserPresentation newUser = new UserPresentation();
         newUser.setUsername("bob");
         newUser.setPassword("secret");
@@ -58,7 +59,7 @@ class DemoControllerIT {
                         .content(userJson))
                 .andExpect(status().isOk());
 
-
+        // verifier que l'utilisateur est bien enregistré et recuperer le token
         String loginResponse = mockMvc.perform(post("/api/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(userJson))
@@ -73,16 +74,32 @@ class DemoControllerIT {
         Map<?, ?> responseMap = objectMapper.readValue(loginResponse, Map.class);
         String token = (String) responseMap.get("token");
 
-
+        // test d'une route protegée ou l'utilisateur doit etre autorisé
         mockMvc.perform(get("/api/protected")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(content().string("This is a protected endpoint. You are authenticated!"));
 
 
+        // test d'une route admin ou l'utilisateur n'est pas autorisé
         mockMvc.perform(get("/api/admin")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(status().isForbidden());
+
+
+
+        // test de la deconnexion
+        mockMvc.perform(post("/api/auth/logout")
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Token revoked successfully"));
+
+
+        // test d'une route protegée ou l'utilisateur n'est plus autorisé
+        mockMvc.perform(get("/api/protected")
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(status().isUnauthorized());
+
     }
 
 
