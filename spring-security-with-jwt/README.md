@@ -226,7 +226,7 @@ public ResponseEntity<?> login(@RequestBody UserPresentation user) {
 
 ## Améliorations possibles
 
-- [ ] Ajouter la révocation des tokens JWT
+- [x] Ajouter la révocation des tokens JWT
 - [ ] faire les tests unitaires de bout en bout 
 
 ---
